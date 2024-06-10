@@ -94,6 +94,7 @@
         <!-- Reset CSS -->
         <link rel="stylesheet" href="./assets/css/reset.css" />
         <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
     </head>
     <body>
         <!-- Header -->
@@ -101,7 +102,7 @@
             <div class="container">
                 <div class="header">
                     <!-- Logo -->
-                    <a href="/">
+                    <a href="#">
                         <div class="logo">
                             <span class="logo__circle"></span>
                             <span class="logo__text">
@@ -113,25 +114,55 @@
                         </div>
                     </a>
 
-                    <!-- Navbar -->
+                    <!-- Tablet/mobile menu -->
+                    <label for="menu-checkbox" class="toggle-menu">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+                            />
+                        </svg>
+                    </label>
+
+                    <!-- PC Navbar -->
                     <nav class="navbar">
-                        <ul class="navbar__list">
+                        <ul id="pc-nav" class="navbar__list">
                             <li class="navbar__item">
                                 <a
-                                    href="#!"
+                                    href="#"
                                     class="navbar__link navbar__link--active"
                                 >
                                     Home
                                 </a>
                             </li>
                             <li class="navbar__item">
-                                <a href="#!" class="navbar__link">Services</a>
+                                <a href="#service" class="navbar__link">
+                                    Services
+                                </a>
                             </li>
                             <li class="navbar__item">
-                                <a href="#!" class="navbar__link">About</a>
+                                <a href="#resource" class="navbar__link">
+                                    Resources
+                                </a>
                             </li>
                             <li class="navbar__item">
-                                <a href="#!" class="navbar__link">Doctors</a>
+                                <a href="#doctor" class="navbar__link">
+                                    Doctors
+                                </a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="#contact" class="navbar__link">
+                                    Contact
+                                </a>
+                            </li>
+                            <li class="show-on-mobile separate navbar__item">
+                                <a href="#!" class="navbar__link"> Log In </a>
+                            </li>
+                            <li class="show-on-mobile navbar__item">
+                                <a href="#!" class="navbar__link"> Sign Up </a>
                             </li>
                         </ul>
                     </nav>
@@ -144,6 +175,38 @@
                         </button>
                     </div>
                 </div>
+            </div>
+        </header>
+
+        <!-- Tablet/mobile header -->
+        <header class="mobile-header">
+            <input
+                type="checkbox"
+                id="menu-checkbox"
+                class="menu-checkbox"
+                hidden
+            />
+
+            <!-- Overlay -->
+            <label for="menu-checkbox" class="menu-overlay"></label>
+
+            <!-- Menu content -->
+            <div class="menu-drawer">
+                <!-- Logo -->
+                <a href="#">
+                    <div class="logo">
+                        <span class="logo__circle"></span>
+                        <span class="logo__text">
+                            <span class="logo__brand">shine</span>
+                            <span class="logo__brand logo__brand--small">
+                                smile
+                            </span>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Navigation -->
+                <ul id="mobile-nav"></ul>
             </div>
         </header>
 
@@ -189,7 +252,7 @@
 
         <main>
             <!-- Service -->
-            <section class="service">
+            <section id="service" class="service">
                 <div class="container">
                     <h2 class="service__heading section-heading">
                         Our services
@@ -296,7 +359,7 @@
             </section>
 
             <!-- Work -->
-            <section class="work">
+            <section id="resource" class="work">
                 <div class="container">
                     <h2 class="section-heading">How it works</h2>
                     <p class="section-desc work__desc">
@@ -417,7 +480,7 @@
             </section>
 
             <!-- Member -->
-            <section class="member">
+            <section id="doctor" class="member">
                 <div class="container">
                     <div class="member__header">
                         <h2 class="section-heading">Our virtual dentist</h2>
@@ -682,7 +745,7 @@
             </section>
 
             <!-- Appointment -->
-            <section class="appointment">
+            <section id="contact" class="appointment">
                 <div class="container">
                     <div class="appointment__inner">
                         <h2 class="appointment__heading section-heading">
@@ -865,5 +928,13 @@
                 </div>
             </section>
         </main>
+
+        <script>
+            const pcNav = document.querySelector("#pc-nav");
+            const mobileNav = document.querySelector("#mobile-nav");
+
+            // Copy from PC nav -> Mobile nav
+            mobileNav.innerHTML = pcNav.innerHTML;
+        </script>
     </body>
 </html>
