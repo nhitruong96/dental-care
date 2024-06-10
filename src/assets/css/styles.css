@@ -103,10 +103,19 @@ button {
 }
 
 /* Header */
-.header {
-    min-height: 100vh;
-    padding-top: 30px;
+.fixed-header {
     background: var(--header-bg);
+    padding-top: 18px;
+    position: sticky;
+    top: -18px;
+    z-index: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
 }
 
 .logo {
@@ -155,13 +164,6 @@ button {
     font-weight: 300;
 }
 
-/* Header top */
-.header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .navbar__list {
     display: flex;
 }
@@ -207,10 +209,14 @@ button {
 }
 
 /* Hero */
+.hero-wrap {
+    background: var(--header-bg);
+}
+
 .hero {
     display: flex;
     align-items: center;
-    margin-top: 76px;
+    padding: 64px 0 110px;
 }
 
 .hero__content {
