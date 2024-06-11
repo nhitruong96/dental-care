@@ -73,6 +73,88 @@
     .separate {
         border-top: 1.5px solid #ebebeb;
     }
+
+    .hero {
+        flex-direction: column-reverse;
+    }
+
+    .hero__content {
+        width: 80%;
+        margin-top: 50px;
+    }
+
+    .hero__heading {
+        font-size: 6.2rem;
+        text-align: center;
+    }
+
+    .hero__desc {
+        text-align: center;
+    }
+
+    .hero__row {
+        justify-content: space-evenly;
+    }
+
+    .service__row {
+        flex-direction: column;
+    }
+
+    .service__list {
+        margin-top: 50px;
+    }
+
+    .work-item div {
+        padding: 28px;
+    }
+
+    .feature__inner {
+        flex-direction: column-reverse;
+    }
+
+    .feature__media {
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .install__inner {
+        padding: 0;
+    }
+
+    .install__content {
+        margin-left: 20px;
+    }
+
+    .install__row {
+        justify-content: center;
+    }
+
+    .news__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news__heading {
+        max-width: 100%;
+    }
+
+    .news__control {
+        justify-content: center;
+    }
+
+    .news__list {
+        margin-top: 50px;
+        align-self: center;
+    }
+
+    .footer__row {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 50px;
+    }
+
+    .footer__copyright {
+        margin-top: 50px;
+    }
 }
 
 /* Tablet */
